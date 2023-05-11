@@ -1,6 +1,6 @@
 /*'use strict'*/
 let numberOfRows = 8;
-let numberOfBomb = 15;
+let numberOfBomb = 10;
 let mas;
 let body = document.querySelector('body')
 let conteiner = document.createElement('div')
@@ -81,7 +81,6 @@ function clickButton() {
 					if (numberClicks.textContent == 0) {
 						if (this == fild1.children[i].children[j]) {
 							console.log(mas)
-							debugger
 							mas.splice(count, 1, mas[count] + 1)
 							function func() {
 								for (let count1 in mas) {
@@ -98,7 +97,7 @@ function clickButton() {
 							console.log(mas)
 						}
 					}
-					fild1.children[i].children[j].textContent = 'x'
+					/*fild1.children[i].children[j].textContent = 'x'*/
 				}
 			}
 		}
@@ -107,7 +106,8 @@ function clickButton() {
 	setTimeout(() => {
 		numberClicks.textContent = Number(numberClicks.innerHTML) + 1;
 		fildClick(but);
-		openUpToNumber(but)
+		openRiteToNumber(but)
+		openLeftToNumber(but)
 		ifTheButtonIsFinal();
 	});
 }
@@ -337,7 +337,7 @@ function bombIn() {
 	return
 }
 
-function openUpToNumber(event) {
+function openRiteToNumber(event) {
 	let fild1 = document.querySelector('.fild')
 	for (let i = 0; i < fild1.children.length; i++) {
 		for (let j = 0; j < fild1.children[i].children.length; j++) {
@@ -386,6 +386,55 @@ function openUpToNumber(event) {
 	return
 }
 
+function openLeftToNumber(event) {
+	let fild1 = document.querySelector('.fild')
+	for (let i = 0; i < fild1.children.length; i++) {
+		for (let j = 0; j < fild1.children[i].children.length; j++) {
+			if (event.className == 'button-bomb') {
+				return
+			}
+			else if (event == fild1.children[i].children[j]) {
+				debugger
+				for (let h = i; h >= 0;) {
+					for (let g = j; g >= 0;) {
+						if (fild1.children[h].children[g] == undefined) {
+							if (fild1.children[h - 1].children[g] !== undefined) {
+								j = 0
+								i=i-1
+							}
+							return
+						}
+						else {
+							if ((fild1.children[h].children.length) == g) {
+								j = 0
+								i=i-1
+							}
+							else {
+								fild1.children[h].children[g].className = 'not-button-bomb'
+								fild1.children[h].children[g].disabled = true
+								if (openUpFild(fild1.children[h].children[g]) > 0) {
+									g--
+									return
+								}
+								else {
+									if (fild1.children[h].children[g-1] == undefined) {
+										return
+									}
+									else{
+										g--
+									}
+									
+
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	return
+}
 
 function openUpFild(event) {
 	let c = 0
