@@ -1,0 +1,57 @@
+.fild {
+    background: aqua;
+    width: fit-content;
+    height: fit-content;
+}
+
+.conteiner {
+    display: flex;
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rou {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+}
+
+.button {
+    margin: 1px;
+    background: rgb(30, 0, 255);
+    width: 40px;
+    height: 40px;
+}
+
+.button:hover {
+    background: rgb(5, 69, 23);
+    border-radius: 3px;
+}
+
+.button-bomb {
+    margin: 1px;
+    background: rgb(255, 0, 0);
+    width: 40px;
+    height: 40px;
+}
+
+.not-button-bomb {
+    margin: 1px;
+    background: rgb(255, 255, 255);
+    width: 40px;
+    height: 40px;
+    font-weight: 900;
+}
+
+.restart {
+    position: absolute;
+    top: 30%;
+    bottom: 30%;
+    left: 10%;
+    right: 10%;
+    margin: 1px;
+    background: rgb(103 247 255);
+}
