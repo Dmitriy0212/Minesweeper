@@ -1,4 +1,9 @@
 /*'use strict'*/
+
+
+
+/*
+console.log(cube(3)); // 27
 let numberOfRows = 8;
 let numberOfBomb = 10;
 let mas;
@@ -97,7 +102,7 @@ function clickButton() {
 							console.log(mas)
 						}
 					}
-					/*fild1.children[i].children[j].textContent = 'x'*/
+					/*fild1.children[i].children[j].textContent = 'x'
 				}
 			}
 		}
@@ -141,7 +146,7 @@ function ifTheButtonIsFinal() {
 						}
 						b += Number(numberOfRows)
 					}
-					/* conteiner.appendChild(restart)*/
+					/* conteiner.appendChild(restart)
 					return
 				}
 			}
@@ -165,13 +170,12 @@ function fildClick(event) {
 							event.className = 'button-bomb'
 							event.disabled = true
 							bombIn()
-							/*let restart = document.createElement('div')
-							restart.className = 'restart'
-							conteiner.appendChild(restart)*/
 							return
 						}
 						if (mas[count] == a - 1 || mas[count] == a + numberOfRows || mas[count] == a + (numberOfRows - 1) || mas[count] == a - (numberOfRows + 1) || mas[count] == a - numberOfRows) {
 							d += 1
+							cal(event,d)
+							
 							switch (d) {
 								case 1:
 									event.style = 'color: #000000'
@@ -215,13 +219,12 @@ function fildClick(event) {
 							event.className = 'button-bomb'
 							event.disabled = true
 							bombIn()
-							/*let restart = document.createElement('div')
-							restart.className = 'restart'
-							conteiner.appendChild(restart)*/
 							return
 						}
 						if (mas[count] == a + 1 || mas[count] == a + (numberOfRows + 1) || mas[count] == a + numberOfRows || mas[count] == a - numberOfRows || mas[count] == a - (numberOfRows - 1)) {
 							d += 1
+							cal(event,d)
+							
 							switch (d) {
 								case 1:
 									event.style = 'color: #000000'
@@ -265,13 +268,12 @@ function fildClick(event) {
 							event.className = 'button-bomb'
 							event.disabled = true
 							bombIn()
-							/*let restart = document.createElement('div')
-							restart.className = 'restart'
-							conteiner.appendChild(restart)*/
 							return
 						}
 						if (mas[count] == a + 1 || mas[count] == a - 1 || mas[count] == a + (numberOfRows + 1) || mas[count] == a + numberOfRows || mas[count] == a + (numberOfRows - 1) || mas[count] == a - (numberOfRows + 1) || mas[count] == a - numberOfRows || mas[count] == a - (numberOfRows - 1)) {
 							d += 1
+							cal(event,d)
+							
 							switch (d) {
 								case 1:
 									event.style = 'color: #000000'
@@ -350,14 +352,14 @@ function openRiteToNumber(event) {
 						if (fild1.children[h].children[g] == undefined) {
 							if (fild1.children[h + 1].children[g] !== undefined) {
 								j = 0
-								i=i+1
+								i = i + 1
 							}
 							return
 						}
 						else {
 							if ((fild1.children[h].children.length) == g) {
 								j = 0
-								i=i+1
+								i = i + 1
 							}
 							else {
 								fild1.children[h].children[g].className = 'not-button-bomb'
@@ -367,13 +369,13 @@ function openRiteToNumber(event) {
 									return
 								}
 								else {
-									if (fild1.children[h].children[g+1] == undefined) {
+									if (fild1.children[h].children[g + 1] == undefined) {
 										return
 									}
-									else{
+									else {
 										g++
 									}
-									
+
 
 								}
 							}
@@ -400,14 +402,14 @@ function openLeftToNumber(event) {
 						if (fild1.children[h].children[g] == undefined) {
 							if (fild1.children[h - 1].children[g] !== undefined) {
 								j = 0
-								i=i-1
+								i = i - 1
 							}
 							return
 						}
 						else {
 							if ((fild1.children[h].children.length) == g) {
 								j = 0
-								i=i-1
+								i = i - 1
 							}
 							else {
 								fild1.children[h].children[g].className = 'not-button-bomb'
@@ -417,13 +419,13 @@ function openLeftToNumber(event) {
 									return
 								}
 								else {
-									if (fild1.children[h].children[g-1] == undefined) {
+									if (fild1.children[h].children[g - 1] == undefined) {
 										return
 									}
-									else{
+									else {
 										g--
 									}
-									
+
 
 								}
 							}
@@ -448,6 +450,8 @@ function openUpFild(event) {
 					for (let count in mas) {
 						if (mas[count] == a - 1 || mas[count] == a + numberOfRows || mas[count] == a + (numberOfRows - 1) || mas[count] == a - (numberOfRows + 1) || mas[count] == a - numberOfRows) {
 							d += 1
+							cal(event,d)
+							
 							switch (d) {
 								case 1:
 									event.style = 'color: #000000'
@@ -488,6 +492,8 @@ function openUpFild(event) {
 					for (let count in mas) {
 						if (mas[count] == a + 1 || mas[count] == a + (numberOfRows + 1) || mas[count] == a + numberOfRows || mas[count] == a - numberOfRows || mas[count] == a - (numberOfRows - 1)) {
 							d += 1
+							cal(event,d)
+							
 							switch (d) {
 								case 1:
 									event.style = 'color: #000000'
@@ -528,6 +534,8 @@ function openUpFild(event) {
 					for (let count in mas) {
 						if (mas[count] == a + 1 || mas[count] == a - 1 || mas[count] == a + (numberOfRows + 1) || mas[count] == a + numberOfRows || mas[count] == a + (numberOfRows - 1) || mas[count] == a - (numberOfRows + 1) || mas[count] == a - numberOfRows || mas[count] == a - (numberOfRows - 1)) {
 							d += 1
+							cal(event,d)
+							
 							switch (d) {
 								case 1:
 									event.style = 'color: #000000'
@@ -567,4 +575,4 @@ function openUpFild(event) {
 		c += Number(numberOfRows)
 	}
 	return d
-}
+}*/
